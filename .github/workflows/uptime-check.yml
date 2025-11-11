@@ -1,0 +1,32 @@
+name: Uptime Checker
+
+on:
+  schedule:
+    # Run the script every 20 minutes
+    - cron: "*/20 * * * *"
+  # Optional: allow manual trigger from the GitHub UI
+  workflow_dispatch:
+
+jobs:
+  run-uptime-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          # Upgrade the version of pip
+          python3 -m pip3 install --upgrade pip
+          # Install dependencies listed within the requirements.txt file
+          pip3 install -r uptime-checker/requirements.txt
+
+      - name: Run uptime checker
+        run: |
+          python3 uptime-checker/index.py
