@@ -46,9 +46,12 @@ def run_checks():
         print(f" {url} -> {status_text}")
 
 if __name__ == "__main__":
-    run_checks()
-
-    while True:
-        # Uncomment this line of code if not using GitHub Actions
-        # time.sleep(CHECK_INTERVAL)
+    # To run the script locally and not using GitHub Actions:
+    # $ LOCAL_LOOP=1 python3 index.py
+    if os.getenv("LOCAL_LOOP") == "1":
+        while True:
+            run_checks()
+            time.sleep(CHECK_INTERVAL)
+    else:
+        # Default for GitHub Actions: run once and exit
         run_checks()
