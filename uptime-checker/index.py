@@ -49,5 +49,6 @@ if __name__ == "__main__":
     run_checks()
 
     while True:
-        time.sleep(CHECK_INTERVAL)
+        # Uncomment this line of code if not using GitHub Actions
+        # time.sleep(CHECK_INTERVAL)
         run_checks()
