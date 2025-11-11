@@ -46,7 +46,7 @@ def run_checks():
         print(f" {url} -> {status_text}")
 
 if __name__ == "__main__":
-    # To run the script locally and not using GitHub Actions
+    # To run the script locally and not using GitHub Actions:
     # $ LOCAL_LOOP=1 python3 index.py
     if os.getenv("LOCAL_LOOP") == "1":
         while True:
