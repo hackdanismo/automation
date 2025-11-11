@@ -23,9 +23,9 @@ jobs:
       - name: Install dependencies
         run: |
           # Upgrade the version of pip
-          python3 -m pip3 install --upgrade pip
+          python -m pip install --upgrade pip
           # Install dependencies listed within the requirements.txt file
-          pip3 install -r uptime-checker/requirements.txt
+          pip install -r uptime-checker/requirements.txt
 
       - name: Run uptime checker
         run: |
