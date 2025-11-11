@@ -29,4 +29,4 @@ jobs:
 
       - name: Run uptime checker
         run: |
-          python3 uptime-checker/index.py
+          python uptime-checker/index.py
