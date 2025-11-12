@@ -59,11 +59,21 @@ $ cd uptime-checker
 # Activate the Virtual Environment
 $ source venv/bin/activate
 
-# Run the Python script containing the code for the tool
-$ python3 index.py
+# Run the Python script containing the code for the tool locally
+$ LOCAL_LOOP=1 python3 index.py
 
 # To close the tool and end the Virtual Environment session
 $ deactivate
+```
+
+By default, the script is setup to run using a scheduled `GitHub Action`. The code for the action can be found in the `.github/workflows/uptime-check.yml` file within the root of the project folder. 
+
+In `GitHub Actions` the alias of `python3` and `pip3` is replaced with: `python` and `pip`.
+
+The script can be run locally from within the terminal:
+
+```shell
+$ LOCAL_LOOP=1 python3 index.py
 ```
 
 The script will run in the terminal and send a `HEAD` request to the URLs listed. The response will be returned to check the `HTTP` or `HTTPS` status.

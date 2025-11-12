@@ -31,7 +31,7 @@ URLS = build_urls(MONITORED_SITES)
 def check_site(url: str) -> bool:
     # Returns True if the site is up (status 200-399), otherwise False
     try:
-        # Use head instead of get request here
+        # Use a HEAD instead of GET request here
         response = requests.head(url, timeout=10, allow_redirects=True)
         return 200 <= response.status_code < 400
     except requests.RequestException:
