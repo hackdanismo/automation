@@ -48,3 +48,5 @@ $ python3 index.py
 # To close the tool and end the Virtual Environment session
 $ deactivate
 ```
+
+The script will run once per day, using `GitHub Actions`, at: `00:00 UTC`.
