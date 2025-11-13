@@ -15,7 +15,7 @@ SITEMAP_URL = "https://www.frontify.com/sitemap.xml"
 # Custom User Agency (UA) for requests
 UA = {"User-Agent": "sitemap-url-checker/1.0 (+https://example.com)"}
 # HTTP timeout for requests
-TIMEOUT = 20
+TIMEOUT = 40
 # Maximum concurrency for URL checks
 MAX_WORKERS = 20
 
