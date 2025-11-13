@@ -88,7 +88,7 @@ if __name__ == "__main__":
         # Report 4xx not-found types promonently (404/410)
         bad = [u for u, s in results.items() if s in (404, 410)]
         if bad:
-            print(f"\n Not Found ({len(bad)}) URKs (404/410):\n")
+            print(f"\n Not Found ({len(bad)}) URLs (404/410):\n")
             for u in bad:
                 print(u)
         else:
