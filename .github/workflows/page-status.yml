@@ -1,0 +1,32 @@
+name: Page Status
+
+on:
+  schedule:
+    # Run the script once per day at 00:00 UTC
+    - cron: "0 0 * * *"
+  # Optional: allow manual trigger from the GitHub UI
+  workflow_dispatch:
+
+jobs:
+  run-page-status:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          # Upgrade the version of pip
+          python -m pip install --upgrade pip
+          # Install dependencies listed within the requirements.txt file
+          pip install -r page-status/requirements.txt
+
+      - name: Run page status
+        run: |
+          python page-status/index.py
